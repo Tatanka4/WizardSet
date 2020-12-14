@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Entità/Wizard/Wizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entità/Meccanismi/SpuntoniS.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet/TilesetWood.res" type="TileSet" id=3]
+[ext_resource path="res://Scene/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataEst.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Gioco/Test/ScenaTest.gd" type="Script" id=6]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataOvest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entità/Altro/Roccia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entità/SlimeBlue/Monster_SlimeBlue.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entità/SlimeRed/Monster_SlimeRed.tscn" type="PackedScene" id=10]
+
+[node name="Room5" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131073, 7, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 6, 0, 196609, 5, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 4, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 393217, 5, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 4, 0, 458753, 9, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 8, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EntrataEst" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 488, 160 )
+
+[node name="EntrataOvest" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 24, 160 )
+
+[node name="Spuntoni" parent="TileMap" groups=[
+"Monster",
+] instance=ExtResource( 2 )]
+position = Vector2( 112, 144 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni2" parent="TileMap" groups=[
+"Monster",
+] instance=ExtResource( 2 )]
+position = Vector2( 176, 176 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni3" parent="TileMap" groups=[
+"Monster",
+] instance=ExtResource( 2 )]
+position = Vector2( 272, 112 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni4" parent="TileMap" groups=[
+"Monster",
+] instance=ExtResource( 2 )]
+position = Vector2( 336, 208 )
+scale = Vector2( 1, 1 )
+
+[node name="Roccia" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 240, 144 )
+
+[node name="Roccia2" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 112, 208 )
+
+[node name="Roccia3" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 400, 144 )
+
+[node name="Roccia4" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 272, 208 )
+
+[node name="Monster_SlimeBlue" parent="." groups=[
+"Monster",
+] instance=ExtResource( 9 )]
+position = Vector2( 344, 224 )
+
+[node name="Monster_SlimeRed" parent="." groups=[
+"Monster",
+] instance=ExtResource( 10 )]
+position = Vector2( 672, 288 )
+scale = Vector2( 3, 3 )
+
+[node name="Monster_SlimeBlue2" parent="." groups=[
+"Monster",
+] instance=ExtResource( 9 )]
+position = Vector2( 480, 352 )
+
+[node name="Wizard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 233.731 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]

@@ -1,0 +1,359 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Entità/Wizard/Wizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataNord.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet/TilesetWood.res" type="TileSet" id=3]
+[ext_resource path="res://Scene/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataEst.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Gioco/Test/ScenaTest.gd" type="Script" id=6]
+[ext_resource path="res://Entità/Altro/Pianta1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entità/Altro/Roccia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entità/Torcia/Torcia.tscn" type="PackedScene" id=9]
+
+[node name="Room11" type="Node2D"]
+modulate = Color( 0.356863, 0.356863, 0.356863, 1 )
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 65539, 1, 0, 65540, 1, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 6, 0, 131073, 5, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 4, 0, 196609, 5, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 4, 0, 262145, 5, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 327681, 5, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 393217, 9, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 8, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EntrataNord" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 128, 24 )
+
+[node name="EntrataEst" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 488, 160 )
+
+[node name="Pianta" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 144, 52 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta2" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 128, 56 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta3" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 116, 52 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta4" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 139, 63 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta5" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 123, 67 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta6" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 111, 63 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta7" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 147, 67 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta8" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 131, 71 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta9" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 119, 67 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta10" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 143, 83 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta11" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 127, 87 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta12" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 115, 83 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta13" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 151, 95 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta14" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 135, 99 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta15" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 123, 95 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta16" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 167, 107 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta17" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 151, 111 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta18" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 139, 107 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta19" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 179, 119 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta20" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 163, 123 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta21" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 151, 119 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta22" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 211, 107 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta23" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 195, 111 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta24" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 183, 107 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta25" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 215, 127 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta26" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 199, 131 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta27" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 187, 127 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta28" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 243, 119 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta29" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 227, 123 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta30" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 215, 119 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta31" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 247, 139 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta32" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 231, 143 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta33" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 219, 139 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta34" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 275, 131 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta35" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 259, 135 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta36" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 247, 131 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta37" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 279, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta38" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 263, 155 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta39" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 251, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta40" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 319, 143 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta41" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 303, 147 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta42" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 291, 143 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta43" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 323, 163 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta44" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 307, 167 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta45" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 295, 163 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta46" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 355, 131 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta47" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 339, 135 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta48" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 327, 131 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta49" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 359, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta50" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 343, 155 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta51" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 331, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta52" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 391, 143 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta53" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 375, 147 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta54" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 363, 143 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta55" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 395, 163 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta56" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 379, 167 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta57" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 367, 163 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta58" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 425, 137 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta59" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 409, 141 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta60" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 397, 137 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta61" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 429, 157 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta62" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 413, 161 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta63" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 401, 157 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta64" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 455, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta65" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 439, 155 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta66" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 427, 151 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta67" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 459, 171 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta68" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 443, 175 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta69" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 431, 171 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Roccia" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 164, 80 )
+
+[node name="Roccia2" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 204, 100 )
+
+[node name="Roccia3" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 204, 156 )
+
+[node name="Roccia4" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 272, 176 )
+
+[node name="Roccia5" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 300, 124 )
+
+[node name="Roccia6" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 344, 176 )
+
+[node name="Roccia7" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 376, 120 )
+
+[node name="Roccia8" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 420, 176 )
+
+[node name="Roccia9" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 136, 128 )
+
+[node name="Wizard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 160 )
+
+[node name="Torcia" parent="." instance=ExtResource( 9 )]
+position = Vector2( 336, 136 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Torcia5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 280, 232 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Torcia2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 608, 224 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Torcia3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 552, 328 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Torcia4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 848, 328 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]

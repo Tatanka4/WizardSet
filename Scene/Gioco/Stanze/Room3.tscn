@@ -1,0 +1,270 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Entità/Wizard/Wizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataOvest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet/TilesetWood.res" type="TileSet" id=3]
+[ext_resource path="res://Scene/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entità/Meccanismi/SpuntoniS.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Gioco/Test/ScenaTest.gd" type="Script" id=6]
+[ext_resource path="res://Entità/Chest/Treasure.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entità/Altro/Roccia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entità/Altro/Barile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entità/Altro/Pianta1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Entità/Mini_Zombie/Monster_MiniZombie.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entità/SlimeBlue/Monster_SlimeBlue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Entità/SlimeRed/Monster_SlimeRed.tscn" type="PackedScene" id=13]
+
+[node name="Room3" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"Tile",
+]]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 6, 0, 131073, 5, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 4, 0, 196609, 5, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 4, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 4, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 4, 0, 393217, 5, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 4, 0, 458753, 5, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 4, 0, 524289, 9, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 8, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EntrataOvest" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 24, 160 )
+
+[node name="Treasure" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 432, 176 )
+scale = Vector2( 1, 1 )
+
+[node name="Pianta" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 160, 160 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta2" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 164, 184 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta3" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 184, 156 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta4" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 220, 224 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta5" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 220, 224 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta6" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 232, 208 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta7" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 232, 208 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta8" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 220, 188 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta9" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 340, 164 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta10" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 356, 180 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta11" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 380, 168 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta12" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 388, 192 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta13" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 364, 200 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta14" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 436, 80 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta18" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 433.5, 80 )
+rotation = -0.339138
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta15" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 412, 80 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta16" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 424, 92 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta17" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 432, 104 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Spuntoni" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 432, 144 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni2" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 432, 208 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni3" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 368, 176 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni6" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 304, 240 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni4" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 400, 144 )
+scale = Vector2( 1, 1 )
+
+[node name="Spuntoni5" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 400, 208 )
+scale = Vector2( 1, 1 )
+
+[node name="Roccia6" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 176, 144 )
+
+[node name="Roccia7" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 208, 144 )
+
+[node name="Roccia8" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 208, 112 )
+
+[node name="Roccia9" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 208, 80 )
+
+[node name="Roccia10" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 240, 112 )
+
+[node name="Roccia11" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 240, 240 )
+
+[node name="Roccia12" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 240, 208 )
+
+[node name="Roccia13" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 208, 208 )
+
+[node name="Roccia14" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 304, 144 )
+
+[node name="Roccia17" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 304, 112 )
+
+[node name="Roccia15" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 304, 176 )
+
+[node name="Roccia16" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 304, 208 )
+
+[node name="Roccia18" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 336, 208 )
+
+[node name="Roccia2" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 144, 112 )
+
+[node name="Roccia3" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 112, 112 )
+
+[node name="Roccia4" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 144, 176 )
+
+[node name="Roccia5" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 112, 240 )
+
+[node name="Barile" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 9 )]
+position = Vector2( 144, 144 )
+
+[node name="Barile3" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 9 )]
+position = Vector2( 80, 240 )
+
+[node name="Barile4" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 9 )]
+position = Vector2( 144, 240 )
+
+[node name="Barile5" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 9 )]
+position = Vector2( 336, 112 )
+
+[node name="Barile2" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 9 )]
+position = Vector2( 240, 80 )
+
+[node name="Monster_MiniZombie" parent="." groups=[
+"Monster",
+] instance=ExtResource( 11 )]
+position = Vector2( 608, 160 )
+
+[node name="Monster_MiniZombie2" parent="." groups=[
+"Monster",
+] instance=ExtResource( 11 )]
+position = Vector2( 424, 352 )
+
+[node name="Monster_SlimeRed" parent="." groups=[
+"Monster",
+] instance=ExtResource( 13 )]
+position = Vector2( 688, 472 )
+scale = Vector2( 3, 3 )
+
+[node name="Monster_SlimeBlue" parent="." groups=[
+"Monster",
+] instance=ExtResource( 12 )]
+position = Vector2( 288, 416 )
+
+[node name="Wizard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 136, 312 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]

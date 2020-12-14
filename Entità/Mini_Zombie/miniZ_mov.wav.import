@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miniZ_mov.wav-ad7c0269437aad58e004bc7e1b0972aa.sample"
+
+[deps]
+
+source_file="res://Entità/Mini_Zombie/miniZ_mov.wav"
+dest_files=[ "res://.import/miniZ_mov.wav-ad7c0269437aad58e004bc7e1b0972aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

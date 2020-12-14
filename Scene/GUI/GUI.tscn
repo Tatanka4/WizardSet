@@ -1,0 +1,237 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scene/GUI/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Res/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Entità/Cuore/tile015.png" type="Texture" id=3]
+[ext_resource path="res://Entità/Cuore/tile007.png" type="Texture" id=4]
+[ext_resource path="res://Entità/Cuore/tile000.png" type="Texture" id=5]
+[ext_resource path="res://Entità/Cuore/0.png" type="Texture" id=6]
+[ext_resource path="res://Entità/Cuore/2.png" type="Texture" id=7]
+[ext_resource path="res://Entità/Cuore/6.png" type="Texture" id=8]
+[ext_resource path="res://Entità/Cuore/4.png" type="Texture" id=9]
+[ext_resource path="res://Entità/Cuore/5.png" type="Texture" id=10]
+[ext_resource path="res://Entità/Cuore/3.png" type="Texture" id=11]
+[ext_resource path="res://Entità/Cuore/1.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Res/PressStart2P-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Full",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Half",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Velocità" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 72.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+text = "Vel:"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Velocità"]
+margin_left = 63.0
+margin_right = 103.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cooldown" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 104.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 1 )
+text = "Sh.Sp:"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Cooldown"]
+margin_left = 94.0
+margin_right = 134.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 112.0
+margin_right = 136.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+text = "Mag.Pow:"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Power"]
+margin_left = 125.0
+margin_right = 165.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Piano" type="Label" parent="."]
+margin_left = 736.0
+margin_top = 8.0
+margin_right = 928.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 4 )
+text = "Piano:"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Piano"]
+margin_left = 208.0
+margin_right = 248.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Informazione" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -304.0
+margin_top = -21.0
+margin_right = 304.0
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP_System" type="Node2D" parent="."]
+visible = false
+position = Vector2( 24, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HP" type="AnimatedSprite" parent="HP_System"]
+frames = SubResource( 7 )
+animation = "Full"
+
+[node name="HP2" type="AnimatedSprite" parent="HP_System"]
+position = Vector2( 41, 0 )
+frames = SubResource( 7 )
+animation = "Full"
+
+[node name="HP3" type="AnimatedSprite" parent="HP_System"]
+position = Vector2( 81, 0 )
+frames = SubResource( 7 )
+animation = "Full"
+
+[node name="HP4" type="AnimatedSprite" parent="HP_System"]
+position = Vector2( 120, 0 )
+frames = SubResource( 7 )
+animation = "Full"
+
+[node name="HP5" type="AnimatedSprite" parent="HP_System"]
+position = Vector2( 160, 0 )
+frames = SubResource( 7 )
+animation = "Full"
+
+[node name="HP_System2" type="Node2D" parent="."]
+position = Vector2( 56, 32 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HP" type="AnimatedSprite" parent="HP_System2"]
+frames = SubResource( 8 )
+animation = "6"

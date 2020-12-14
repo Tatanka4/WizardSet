@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entità/Rouge/tile014.png" type="Texture" id=1]
+[ext_resource path="res://Entità/Rouge/RougeMagic.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.2275, 5.56695 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
+} ]
+
+[node name="RougeMagic" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.944942, 0.944942 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 4 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "Default"
+playing = true

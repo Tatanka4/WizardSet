@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entità/Torcia/Light.png" type="Texture" id=1]
+[ext_resource path="res://Entità/Torcia/tile002.png" type="Texture" id=2]
+[ext_resource path="res://Entità/Torcia/tile001.png" type="Texture" id=3]
+[ext_resource path="res://Entità/Torcia/tile000.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Torcia" type="StaticBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+playing = true
+
+[node name="Light2D" type="Light2D" parent="AnimatedSprite"]
+texture = ExtResource( 1 )
+texture_scale = 0.5
+color = Color( 1, 0.607843, 0, 1 )
+energy = 2.0

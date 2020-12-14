@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Entità/Wizard/Wizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataNord.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet/TilesetWood.res" type="TileSet" id=3]
+[ext_resource path="res://Scene/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Gioco/Scale/Scale_Su.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Gioco/Test/ScenaTest.gd" type="Script" id=6]
+[ext_resource path="res://Entità/Torcia/Torcia.tscn" type="PackedScene" id=10]
+
+[node name="Room18" type="Node2D"]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65540, 7, 0, 65541, 2, 0, 65542, 2, 0, 65543, 1, 0, 65544, 1, 0, 65545, 2, 0, 65546, 2, 0, 65547, 6, 0, 131076, 5, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 4, 0, 196612, 5, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 4, 0, 262148, 5, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 4, 0, 327684, 5, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 4, 0, 393220, 9, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 8, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EntrataNord" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 256, 28 )
+
+[node name="Scale_Su" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 304.5, 148 )
+
+[node name="Torcia" parent="." instance=ExtResource( 10 )]
+position = Vector2( 424, 88 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Torcia2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 608, 88 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Wizard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 288 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]

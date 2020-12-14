@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Entità/Wizard/Wizard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataNord.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet/TilesetWood.res" type="TileSet" id=3]
+[ext_resource path="res://Scene/GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataEst.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Gioco/Test/ScenaTest.gd" type="Script" id=6]
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataSud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entità/Altro/Barile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entità/Meccanismi/SpuntoniS.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Entità/SlimeRed/Monster_SlimeRed.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Entità/Mini_Zombie/Monster_MiniZombie.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Entità/Altro/Pianta1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Entità/Pozioni/Pozione_Speed.tscn" type="PackedScene" id=13]
+
+[node name="Room17" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"Tile",
+]]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65542, 7, 0, 65543, 1, 0, 65544, 1, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 6, 0, 131078, 5, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 4, 0, 196614, 5, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 4, 0, 262150, 5, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 327686, 5, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 393222, 5, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 4, 0, 458758, 5, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 4, 0, 524294, 9, 0, 524295, 1, 0, 524296, 1, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 8, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EntrataNord" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 255.5, 27.1079 )
+
+[node name="EntrataEst" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 486.801, 160.299 )
+
+[node name="EntrataSud" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 254.871, 293.118 )
+
+[node name="Pianta6" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 432, 228 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Barile" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 400, 240 )
+
+[node name="Barile2" parent="TileMap" groups=[
+"Tile",
+] instance=ExtResource( 8 )]
+position = Vector2( 400, 208 )
+
+[node name="Spuntoni" parent="TileMap" groups=[
+"Monster",
+] instance=ExtResource( 9 )]
+position = Vector2( 432, 208 )
+scale = Vector2( 1, 1 )
+
+[node name="Pozione_Speed" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 432, 236 )
+
+[node name="Pianta" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 240, 80 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta2" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 240, 112 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta7" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 240, 128 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta8" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 240, 100 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta9" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 260, 104 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta10" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 260, 120 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta3" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 240, 144 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta4" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 400, 80 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pianta5" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 272, 272 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Monster_SlimeRed" parent="." groups=[
+"Monster",
+] instance=ExtResource( 10 )]
+position = Vector2( 608, 224 )
+scale = Vector2( 3, 3 )
+
+[node name="Monster_MiniZombie" parent="." groups=[
+"Monster",
+] instance=ExtResource( 11 )]
+position = Vector2( 608, 416 )
+
+[node name="Wizard" parent="." instance=ExtResource( 1 )]
+position = Vector2( 697.522, 292.002 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]

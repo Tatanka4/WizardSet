@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Entità/Rouge/red_wvyvum.png" type="Texture" id=1]
+
+
+[node name="Boss_Health" type="TextureProgress"]
+margin_left = 264.0
+margin_top = 16.0
+margin_right = 2184.0
+margin_bottom = 1096.0
+rect_scale = Vector2( 0.2, 0.03 )
+value = 100.0
+texture_progress = ExtResource( 1 )
+tint_progress = Color( 0.576471, 0.203922, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

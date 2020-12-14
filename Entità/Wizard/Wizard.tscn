@@ -1,0 +1,106 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Entità/Wizard/tile000.png" type="Texture" id=1]
+[ext_resource path="res://Entità/Wizard/WizardKinematic.gd" type="Script" id=2]
+[ext_resource path="res://Entità/Wizard/tile013.png" type="Texture" id=3]
+[ext_resource path="res://Entità/Wizard/tile010.png" type="Texture" id=4]
+[ext_resource path="res://Entità/Wizard/tile011.png" type="Texture" id=5]
+[ext_resource path="res://Entità/Wizard/tile012.png" type="Texture" id=6]
+[ext_resource path="res://Entità/Wizard/tile009.png" type="Texture" id=7]
+[ext_resource path="res://Entità/Wizard/tile002.png" type="Texture" id=8]
+[ext_resource path="res://Entità/Wizard/tile003.png" type="Texture" id=9]
+[ext_resource path="res://Entità/Wizard/tile004.png" type="Texture" id=10]
+[ext_resource path="res://Entità/Wizard/tile005.png" type="Texture" id=11]
+[ext_resource path="res://Entità/Wizard/tile008.png" type="Texture" id=12]
+[ext_resource path="res://Entità/Wizard/tile001.png" type="Texture" id=13]
+[ext_resource path="res://Entità/Wizard/Magia.wav" type="AudioStream" id=14]
+[ext_resource path="res://Entità/Wizard/bottle.wav" type="AudioStream" id=15]
+[ext_resource path="res://Entità/Wizard/Danno.wav" type="AudioStream" id=16]
+[ext_resource path="res://Entità/Wizard/cloth.wav" type="AudioStream" id=17]
+[ext_resource path="res://Entità/Wizard/door.wav" type="AudioStream" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Cammina_Up_Sx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Cammina_Up_Dx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Fermo_Up_Sx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Fermo_Sx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Fermo_Dx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Fermo_Up_Dx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Cammina_Dx",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Cammina_Sx",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.117, 20.796 )
+
+[node name="Wizard" type="KinematicBody2D"]
+position = Vector2( 165.883, 164.296 )
+script = ExtResource( 2 )
+
+[node name="Wizard" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Fermo_Dx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 7 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+
+[node name="Magic_Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Danno_Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Suoni" type="Node2D" parent="."]
+
+[node name="Magia" type="AudioStreamPlayer" parent="Suoni"]
+stream = ExtResource( 14 )
+
+[node name="Pozione" type="AudioStreamPlayer" parent="Suoni"]
+stream = ExtResource( 15 )
+
+[node name="Danno" type="AudioStreamPlayer" parent="Suoni"]
+stream = ExtResource( 16 )
+
+[node name="Pergamena" type="AudioStreamPlayer" parent="Suoni"]
+stream = ExtResource( 17 )
+
+[node name="Chest" type="AudioStreamPlayer" parent="Suoni"]
+stream = ExtResource( 18 )

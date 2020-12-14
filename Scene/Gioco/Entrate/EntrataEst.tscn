@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Gioco/Entrate/EntrataEst.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.5, 4.5 )
+
+[node name="EntrataEst" type="StaticBody2D"]
+position = Vector2( 255.5, 39 )
+rotation = 1.5708
+scale = Vector2( 2, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
