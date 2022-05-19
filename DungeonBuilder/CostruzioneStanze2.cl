@@ -1,97 +1,88 @@
-#const required_rooms = 8.
+#const n = 1.
+#const required_rooms = n.
 #const rows = 4.
 #const cols = 4.
-#const hp = 3.
-
-
-room(0).  % fake room
-room(2..18).
-treasureRoom(3..4).
-
-door(18,north).
-door(6,north).
-door(7,north).
-door(10,north).
-door(11,north).
-door(12,north).
-door(14,north).
-door(16,north).
-door(17,north).
-
-door(2,south).
-door(6,south).
-door(7,south).
-door(8,south).
-door(9,south).
-door(12,south).
-door(15,south).
-door(16,south).
-door(17,south).
-
-door(3,west).
-door(5,west).
-door(7,west).
-door(9,west).
-door(10,west).
-door(13,west).
-door(14,west).
-door(15,west).
-door(16,west).
-
-door(4,east).
-door(5,east).
-door(7,east).
-door(8,east).
-door(11,east).
-door(13,east).
-door(14,east).
-door(15,east).
-door(17,east).
-
-
-opposite(north,south).
-opposite(east,west).
-opposite(X,Y) :- opposite(Y,X).
-
-shift(north,-1,0).
-shift(south,1,0).
-shift(east,0,1).
-shift(west,0,-1).
-
-
-grid(1..rows,1..cols).
-
-% fake walls all around
-position(0,0..cols+1,0).
-position(rows+1,0..cols+1,0).
-position(0..rows+1,0,0).
-position(0..rows+1,cols+1,0).
-
-{position(X,Y,R) : room(R)} = 1 :- grid(X,Y).
-
-%Treasure Rooms
-treasureRoomInDungeon(R) :- position(X,Y,R), treasureRoom(R).
-:- #count{R : treasureRoomInDungeon(R)} > 1.
-
-%Stanza iniziale
-:- #count{X,Y : position(X,Y,18)} != 1.
-spawnPozioneVita(1) :- hp <= 2.
-%Stanza boss
-:- #count{X,Y : position(X,Y,2)} != 1.
-
-:- position(X,Y,R), door(R,D), shift(D,X1,Y1), position(X+X1,Y+Y1,R1), opposite(D,D1), not door(R1,D1).
-
-reach(X,Y) :- position(X,Y,18).
-reach(X+X1,Y+Y1) :- reach(X,Y), position(X,Y,R), door(R,D), shift(D,X1,Y1).
-:- position(X,Y,R), R != 0, not reach(X,Y).
-
-:- #count{X,Y : position(X,Y,R), R != 0} != required_rooms.
-
-:- room(R), #count{X,Y : position(X,Y,R), R != 0} > 1.
-
-%roomInDungeon(R) :- position(X,Y,R), R != 0.
-
+ 
+room(2..18). %rooms
+ 
+room_flag(18,initial).
+room_flag(2,boss).
+room_flag(3,treasure).
+room_flag(4,treasure).
+ 
+flag_bounds(initial,1,1).
+flag_bounds(boss,1,1).
+flag_bounds(treasure,0,1).
+ 
+room_door(18,north).
+room_door(6,north).
+room_door(7,north).
+room_door(10,north).
+room_door(11,north).
+room_door(12,north).
+room_door(14,north).
+room_door(16,north).
+room_door(17,north).
+ 
+room_door(2,south).
+room_door(6,south).
+room_door(7,south).
+room_door(8,south).
+room_door(9,south).
+room_door(12,south).
+room_door(15,south).
+room_door(16,south).
+room_door(17,south).
+ 
+room_door(3,west).
+room_door(5,west).
+room_door(7,west).
+room_door(9,west).
+room_door(10,west).
+room_door(13,west).
+room_door(14,west).
+room_door(15,west).
+room_door(16,west).
+ 
+room_door(4,east).
+room_door(5,east).
+room_door(7,east).
+room_door(8,east).
+room_door(11,east).
+room_door(13,east).
+room_door(14,east).
+room_door(15,east).
+room_door(17,east).
+ 
+ 
+delta(north,-1, 0).     delta(west,  0,-1).
+delta(south, 1, 0).     delta(east,  0, 1).
+opposite(north,south).  opposite(west,east).
+opposite(south,north).  opposite(east,west).
+ 
+ 
+{assign(X,Y,nil); assign(X,Y,R) : room(R)} = 1 :- X = 1..rows, Y = 1..cols.
+ 
+assign(0,     Y,     nil) :- Y = 0..cols+1.
+assign(rows+1,Y,     nil) :- Y = 0..cols+1.
+assign(X,     0,     nil) :- X = 0..rows+1.
+assign(X,     cols+1,nil) :- X = 0..rows+1.
+ 
+:- #count{X,Y : assign(X,Y,R), R != nil} != required_rooms.
+ 
+:- assign(X,Y,R), room_door(R,L), delta(L,DX,DY), assign(X+DX,Y+DY,R'), opposite(L,L'), not room_door(R',L').
+ 
+:- flag_bounds(F,MIN,MAX), not MIN <= #count{X,Y : assign(X,Y,R), room_flag(R,F)} <= MAX.
+ 
+reachable(X,Y) :- room_flag(R,initial), assign(X,Y,R).
+reachable(X+DX,Y+DY) :- reachable(X,Y), assign(X,Y,R), room_door(R,L), delta(L,DX,DY).
+:- assign(X,Y,R), R != nil, not reachable(X,Y).
+ 
+spawn_hp_potion(R) :- room_flag(R,initial), hp <= 2.
+ 
+ 
+ 
+ 
 #show.
-#show position(X,Y,R) : position(X,Y,R), R != 0.
-#show spawnPozioneVita(S) : spawnPozioneVita(S).
+#show assign(X,Y,R) : assign(X,Y,R), R != 0.
 %#show roomInDungeon(R) :  roomInDungeon(R).

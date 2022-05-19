@@ -1,7 +1,7 @@
 extends Label
 
 var builder = "DungeonBuilder/CostruzioneStanze.cl"
-var required_room = "-c required_rooms=8"
+var required_room = "-c n=8"
 
 func effettuaAzione():
 	SceneManager.clearSceneDict()

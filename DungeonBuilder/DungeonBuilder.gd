@@ -14,6 +14,7 @@ func _ready():
 	initDic()
 
 func generateDungeon(builder, required_room, hp = null):
+	print(required_room)
 	var output = []
 	
 	var spawnPozione
@@ -22,7 +23,7 @@ func generateDungeon(builder, required_room, hp = null):
 	else:
 		spawnPozione = hp
 	
-	OS.execute("clingo.exe", [builder, "-n 0", required_room, spawnPozione, '--verbose=0', '--outf=2' ], true, output)
+	OS.execute("clingo.exe", [builder, "-n 1000", required_room, '--verbose=0', '--outf=2' ], true, output)
 	output = JSON.parse(output[0]).result
 	#print(output)
 	var answerSet = []
@@ -53,7 +54,7 @@ func generateDungeon(builder, required_room, hp = null):
 func createArrayCoord(answerSet):
 	var regex = RegEx.new()
 	var arrayCoord = []
-	regex.compile("position\\((\\d+),(\\d+),(\\d+)\\)")
+	regex.compile("assign\\((\\d+),(\\d+),(\\d+)\\)")
 	for i in range (len(answerSet)):
 		var result = regex.search(answerSet[i])
 		if result:
