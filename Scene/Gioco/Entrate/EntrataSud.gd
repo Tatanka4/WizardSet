@@ -10,9 +10,9 @@ func _ready():
 func entra(animazione):
 	if not locked:
 		if animazione == "Cammina_Dx":
-			var nextRoomPath = DungeonBuilder.nextRoom(get_parent().get_parent().name, "sud")
+			var nextRoomPath = DungeonBuilder.nextRoom(get_parent().get_parent().getID(), "sud")
 			#print(nextRoomPath)
-			SceneManager.goto_scene(nextRoomPath, "nord") #poi aggiustare con mappe random
+			SceneManager.goto_scene(int(nextRoomPath), "nord") #poi aggiustare con mappe random
 			#print(get_parent().get_parent().name)
 
 func setLock(boolean):

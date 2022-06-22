@@ -7,7 +7,7 @@ func _ready():
 	
 func entra(animazione):
 	if animazione == "Cammina_Sx":
-		var nextRoomPath = DungeonBuilder.nextRoom(get_parent().get_parent().name, "ovest")
+		var nextRoomPath = DungeonBuilder.nextRoom(get_parent().get_parent().getID(), "ovest")
 		#print(nextRoomPath)
-		SceneManager.goto_scene(nextRoomPath, "est") #poi aggiustare con mappe random
+		SceneManager.goto_scene(int(nextRoomPath), "est") #poi aggiustare con mappe random
 		#print(get_parent().get_parent().name)

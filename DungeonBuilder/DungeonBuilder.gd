@@ -7,6 +7,8 @@ var dicRoom = {}
 var piano = 1
 var spawnPozioneHp = 0
 
+var sceneRoom = {}
+
 var rooms = 8
 
 func _ready():
@@ -14,6 +16,10 @@ func _ready():
 	initDic()
 
 func generateDungeon(builder, required_room, hp = null):
+	
+	MainScript.setID(0)
+	sceneRoom = {}
+	
 	print(required_room)
 	var output = []
 	
@@ -42,14 +48,20 @@ func generateDungeon(builder, required_room, hp = null):
 	var coord = createArrayCoord(disposizioneScelta)
 	var spawnVitaHp = getValueFromAsp(disposizioneScelta)
 	
+	var sceneToLoad
+	
 	for i in range (len(coord)):
 		var x = int(coord[i][0])
 		var y = int(coord[i][1])
 		var val = int(coord[i][2])
+		sceneToLoad = SceneManager.load_node("res://Scene/Gioco/Stanze/Room"+str(val)+".tscn")
+		sceneRoom[sceneToLoad.getID()] = sceneToLoad
 		#print(x, y, val)
-		dungeon[x][y] = val
+		dungeon[x][y] = sceneToLoad.getID()
 	
 	Utility.printMatrix(dungeon)
+	SceneManager.setSceneRoom(sceneRoom)
+	
 
 func createArrayCoord(answerSet):
 	var regex = RegEx.new()
@@ -84,14 +96,14 @@ func initDic():
 		dicRoom[i] = "res://Scene/Gioco/Stanze/Room"+num+".tscn";
 		
 func nextRoom(numStanza, verso):
-	pass
+	print(numStanza)
 	var x
 	var y
 	var trovato = false
 	var roomNext
 	for i in range(len(dungeon)):
 		for j in range(len(dungeon[i])):
-			if int(numStanza) == dungeon[i][j]:
+			if str(numStanza) == str(dungeon[i][j]):
 				x = i
 				y = j
 				trovato = true
@@ -106,8 +118,7 @@ func nextRoom(numStanza, verso):
 				roomNext = dungeon[x][y + 1]
 			"ovest":
 				roomNext = dungeon[x][y - 1]
-
-	return dicRoom[roomNext]
+	return roomNext
 				
 
 func setRooms(r):
@@ -129,3 +140,5 @@ func increasePiano():
 func getSpawnPozione():
 	return spawnPozioneHp
 
+func getSceneRoom():
+	return sceneRoom

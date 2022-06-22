@@ -6,5 +6,6 @@ var required_room = "-c n=8"
 func effettuaAzione():
 	SceneManager.clearSceneDict()
 	DungeonBuilder.generateDungeon(builder, required_room)
+	print(DungeonBuilder.getSceneRoom())
 	SceneManager.setWizard(SceneManager.load_node("res://Entità/Wizard/Wizard.tscn"))
-	SceneManager.goto_scene("res://Scene/Gioco/Stanze/Room1.tscn")
+	SceneManager.goto_scene("0")

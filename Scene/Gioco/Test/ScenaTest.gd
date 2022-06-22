@@ -1,6 +1,14 @@
 extends Node2D
 
-func _ready():
+var id
+
+func _init():
+	id = MainScript.getID()
+	MainScript.increaseID()
+	#print(id)
+
+func _ready():	
+	
 	var childrens = []
 	for c in get_node("TileMap").get_children():
 		childrens.append(c)
@@ -35,6 +43,8 @@ func init(entrata):
 		"ovest":
 			$Wizard.global_position = $TileMap/EntrataOvest.global_position + Vector2(50,0)
 			$Wizard.get_node("Wizard").play("Cammina_Dx")
-	
+
+func getID():
+	return id
 
 

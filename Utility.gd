@@ -12,7 +12,7 @@ func createArray2D(x,y):
 	for i in range(x):
 		var array = []
 		for j in range(y):
-			array.append(0)
+			array.append("X")
 		arrayFinal.append(array)
 
 	return arrayFinal
