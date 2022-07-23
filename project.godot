@@ -24,6 +24,7 @@ SceneManager="*res://Res/SceneManager.gd"
 MainScript="*res://Res/MainScript.gd"
 DungeonBuilder="*res://DungeonBuilder/DungeonBuilder.gd"
 Utility="*res://Utility.gd"
+RoomBuilder="*res://DungeonBuilder/RoomBuilder.gd"
 
 [importer_defaults]
 

@@ -27,6 +27,18 @@ func printMatrix(matrix):
 	print("*****************")
 	
 
+func createNumeratedArray2D(x,y):
+	var count = 1
+	var arrayFinal = []
+	for i in range(x):
+		var array = []
+		for j in range(y):
+			array.append(count)
+			count = count + 1
+		arrayFinal.append(array)
+
+	return arrayFinal
+
 ###TRESAURES UTILTY###
 
 func initDic():

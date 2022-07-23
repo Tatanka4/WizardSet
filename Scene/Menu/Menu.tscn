@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Res/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Res/GoudPixelRegular-VA20.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Res/Menu/Select.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scene/Menu/AvviaPartita.gd" type="Script" id=7]
 [ext_resource path="res://Scene/Menu/Esci.gd" type="Script" id=8]
+[ext_resource path="res://Scene/Menu/AvviaRB.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -86,18 +87,26 @@ stream = ExtResource( 6 )
 volume_db = 2.0
 
 [node name="AvviaPartita" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/OpzioniMenu"]
-margin_top = 103.0
+margin_top = 80.0
 margin_right = 824.0
-margin_bottom = 135.0
+margin_bottom = 112.0
 custom_fonts/font = SubResource( 2 )
 text = "Avvia partita"
 script = ExtResource( 7 )
 
+[node name="RoomBuilder" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/OpzioniMenu"]
+margin_top = 127.0
+margin_right = 824.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 2 )
+text = "Room Builder"
+script = ExtResource( 9 )
+
 [node name="Esci" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/OpzioniMenu"]
 modulate = Color( 1, 1, 1, 0.498039 )
-margin_top = 150.0
+margin_top = 174.0
 margin_right = 824.0
-margin_bottom = 182.0
+margin_bottom = 206.0
 custom_fonts/font = SubResource( 2 )
 text = "Esci"
 script = ExtResource( 8 )

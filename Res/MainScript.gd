@@ -1,5 +1,6 @@
 extends Node
 
+var debug = false
 var countID = 0
 
 func increaseID():
@@ -11,5 +12,10 @@ func getID():
 func setID(value):
 	countID = value
 
+func getDebug():
+	return debug
+	
+func setDebug(mode):
+	debug = mode
 
 
